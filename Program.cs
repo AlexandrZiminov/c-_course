@@ -1,8 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-// Console.WriteLine("Hello, World!");
-
-namespace Base;
+﻿namespace Base;
 
 internal class Program
 {
@@ -13,8 +9,6 @@ internal class Program
         var attempts = (int)Math.Ceiling(Math.Log2(maxValue));
         var currentGuess = Math.Ceiling(maxValue / 2);
         maxValue = Math.Ceiling(maxValue / 2);
-        // var currentMin = 0.0;
-        // var currentMax = maxValue;
 
         Console.WriteLine(
             $"I have an integer number from 0 to {maxValue}, you have {attempts} attempts, try to guess it");
@@ -35,12 +29,9 @@ internal class Program
 
             if (res == "greater")
                 currentGuess = currentGuess + maxValue;
-            // currentGuess = Math.Ceiling(currentMax - (currentMax - currentGuess) / 2);
-            // currentMin = currentMax - currentGuess;
+
             else if (res == "less")
                 currentGuess = currentGuess - maxValue;
-            // currentMax = currentGuess;
-            // currentGuess = currentMin + Math.Ceiling((currentGuess - currentMin) / 2);
         }
     }
 }
