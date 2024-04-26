@@ -9,7 +9,7 @@ internal class Program
     private static void Main(string[] args)
     {
         var maxValue = 100000.0;
-        var randInt = new Random().Next(0, 1000);
+        var randInt = new Random().Next(0, (int)maxValue);
         var attempts = (int)Math.Ceiling(Math.Log2(maxValue));
         var currentGuess = Math.Ceiling(maxValue / 2);
         maxValue = Math.Ceiling(maxValue / 2);
@@ -32,6 +32,7 @@ internal class Program
                 Console.WriteLine($"Nice! I used {i + 1}/{attempts} attempts");
                 break;
             }
+
             if (res == "greater")
                 currentGuess = currentGuess + maxValue;
             // currentGuess = Math.Ceiling(currentMax - (currentMax - currentGuess) / 2);
